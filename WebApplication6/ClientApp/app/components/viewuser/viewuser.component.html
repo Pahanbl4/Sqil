@@ -1,0 +1,42 @@
+﻿<h2>Veiw All Users</h2>
+
+<div class="container" *ngIf="usersType && usersType.length > 0">
+
+    <div class="row">
+        <table class="table table-bordered">
+
+            <thead>
+                <tr>
+                    <th>userName</th>
+                    <th>email</th>
+                    <th>password</th>
+                    <th>rolesName</th>
+                    <th>permissionName</th>
+
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let usersTypes of usersType">
+                    <td>{{usersTypes.userName}}</td>
+                    <td>{{usersTypes.email}}</td>
+                    <td>{{usersTypes.password}}</td>
+                    <td>{{usersTypes.rolesName}}</td>
+                    <td>{{usersTypes.permissionName}}</td>
+                    <td>
+
+                        <span><button class="btn btn-primary usersTypeViewEditButton"
+                                      (click)="editUsers(usersTypes.usersId)"
+                                      
+                                      >Edit</button></span>
+                        <span><button class="btn btn-danger usersTypeViewEditButton"
+                                      (click)="deleteUsers(usersTypes.usersId)"
+                                      >Delete</button></span>
+                        <span><button class="btn btn-link usersTypeViewEditButton">Details</button></span>
+
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,94 @@
+﻿<h2>Add Users</h2>
+
+<div class="container UserContainer">
+    <h1>Add Users</h1>
+
+    <form (ngSubmit)="onSubmit()" #UserForm="ngForm" novalidate>
+        <!--Name-->
+        <div class="form-group">
+
+            <label for="name">
+                Name
+            </label>
+            <input type="text" class="form-control" id="name" name="name"
+                   [(ngModel)]="Users.name"
+                   #name="ngModel"
+                   required />
+            <div class="alert alert-danger" [hidden]="name.valid || name.pristine">
+                name is required
+            </div>
+
+        </div>
+        <!--email-->
+        <div class="form-group">
+
+            <label for="email">
+                Email
+            </label>
+            <input type="text" class="form-control" id="email" name="email"
+                   [(ngModel)]="Users.email"
+                   #email="ngModel"
+                   required />
+            <div class="alert alert-danger" [hidden]="email.valid || email.pristine">
+                email is required
+            </div>
+
+        </div>
+
+        <!--pussw-->
+        <div class="form-group">
+
+            <label for="password">Password</label>
+            <input type="text" class="form-control" id="password" name="password"
+                   [(ngModel)]="Users.password"
+                   #password="ngModel">
+        </div>
+
+        <!--roles-->
+        <div class="form-group" *ngIf="RolesType && RolesType.length > 0">
+
+            <label for="rolesId">Roles</label>
+
+            <select class="form-control" [(ngModel)]="Users.rolesId"
+                    name="rolesId" id="rolesId"
+                    #rolesId="ngModel"
+                    required>
+                <option *ngFor="let role of RolesType " value={{role.id}}>
+                    {{role.name}}
+                </option>
+            </select>
+            <div class="alert alert-danger" [hidden]="rolesId.valid || rolesId.pristine">
+                role is required
+            </div>
+        </div>
+
+        <!--permisiion-->
+        <div class="form-group" *ngIf="PermissionType && PermissionType.length > 0">
+
+            <label for="permissionId">
+                Permission
+            </label>
+            <select class="form-control" id="email" name="email"
+                    [(ngModel)]="Users.permissionId"
+                    #permissionId="ngModel"
+                    required>
+                <option *ngFor="let PermissionTypes of PermissionType " value={{PermissionTypes.id}}>
+                    {{PermissionTypes.name}}
+                </option>
+            </select>
+            <div class="alert alert-danger" [hidden]="permissionId.valid || permissionId.pristine">
+                email is required
+            </div>
+
+        </div>
+
+
+
+        <button type="submit" class="btn btn-primary"
+                [disabled]="!UserForm.form.valid">
+            Add User
+        </button>
+        <button class="btn btn-link">Reset</button>
+    </form>
+</div>
+
