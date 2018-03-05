@@ -55,7 +55,7 @@ export class AddUserComponent {
 
 						var userId = resp.json().id;
 						alert("User saved Successfuly witch jobId: " + userId);
-						this.router.navigate(['/add-user']);
+						this.router.navigate(['/view-user']);
 					}
 				}, error => {
 					console.log(error)

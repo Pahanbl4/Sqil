@@ -92,7 +92,7 @@ namespace WebApplication6.Controllers
                 }
             }
 
-            return NoContent();
+            return Ok(id);
         }
 
         // POST: api/Users

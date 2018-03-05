@@ -27,7 +27,7 @@ export class EditUserComponent implements OnInit {
 				.subscribe(result =>
 				{
 					this.Users = result.json() as UsersType;
-					console.log(this.Users)
+					console.log(this.Users);
 				}, error =>
 				{
 					console.log(error);
@@ -61,16 +61,14 @@ export class EditUserComponent implements OnInit {
 
 	onSubmit() {
 
-	
-
 		if (this.Users && this.Users.name && this.Users.name.length > 0 && this.userId > 0) {
 			this.dataservice.editUsers(this.userId, this.Users)
 				.subscribe(resp => {
 					if (resp.ok) {
 
 						var userId = resp.json().id;
-						alert("User Edit Successfuly witch jobId: " + userId);
-						this.router.navigate(['/add-user']);
+						alert("User Edit Successfuly witch userId: " + userId);
+						this.router.navigate(['/view-user']);
 					}
 				}, error => {
 					console.log(error)
