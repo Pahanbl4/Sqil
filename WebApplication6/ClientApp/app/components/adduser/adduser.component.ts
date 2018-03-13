@@ -47,7 +47,7 @@ export class AddUserComponent {
 	onSubmit() {
 
 		console.log(this.Users);
-	
+		console.log(this.Users.rolesId)
 		if (this.Users && this.Users.name && this.Users.name.length > 0) {
 			this.dataservice.saveUsers(this.Users)
 				.subscribe(resp => {

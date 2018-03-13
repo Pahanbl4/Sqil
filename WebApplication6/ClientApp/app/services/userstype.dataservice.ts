@@ -6,7 +6,7 @@ import { UsersType } from '../model/UsersType';
 @Injectable()
 export class UsersTypeDataService {
 
-	private baseUrl: string = "http://localhost:59693/api/";
+	private baseUrl: string = "http://localhost:60377/api/";
 
 	constructor(private http: Http) {
 
