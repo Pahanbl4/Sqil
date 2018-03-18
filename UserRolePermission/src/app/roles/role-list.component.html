@@ -1,0 +1,40 @@
+<button class="btn btn-default" (click)="createRoleModal.openModal()">
+    <i class="fa fa-plus" aria-hidden="true"></i> Add Role
+</button>
+<br /><br />
+
+<div @flyInOut>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Number</th>
+                <th>Title</th>
+
+                <th></th>
+                <th></th>              
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let role of roles">
+                <td>{{role.roleID}}</td>
+                <td>{{role.title}}</td>
+                           
+                <td>
+                    <a class="btn btn-info" (click)="editRoleModal.openModal(role.roleID)">
+                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a>
+                </td>
+                <td>
+                    <button class="btn btn-danger" (click)="removeRole(role)">
+                        <i class="fa fa-trash" aria-hidden="true"></i> Delete
+                    </button>
+                </td> 
+            </tr>
+        </tbody>
+    </table>
+ 
+    <pagination [boundaryLinks]="true" [totalItems]="totalItems" [itemsPerPage]="itemsPerPage" [(ngModel)]="currentPage" class="pagination-sm"
+        previousText="&lsaquo;" nextText="&rsaquo;" firstText="&laquo;" lastText="&raquo;" (pageChanged)="pageChanged($event)"></pagination>
+ </div>
+
+ <createRole-modal [role]="role"  (roleCreated)="loadRoles();" #createRoleModal></createRole-modal> 
+ <editRole-modal  (loadRole)="loadDepartments();" (roleUpdated)="loadRoles();" #editRoleModal></editRole-modal> 

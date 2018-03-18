@@ -1,0 +1,11 @@
+c:\users\pavel\source\repos\WebApplication11\WebApplication11\bin\Debug\netcoreapp2.0\WebApplication11.deps.json
+c:\users\pavel\source\repos\WebApplication11\WebApplication11\bin\Debug\netcoreapp2.0\WebApplication11.runtimeconfig.json
+c:\users\pavel\source\repos\WebApplication11\WebApplication11\bin\Debug\netcoreapp2.0\WebApplication11.runtimeconfig.dev.json
+c:\users\pavel\source\repos\WebApplication11\WebApplication11\bin\Debug\netcoreapp2.0\WebApplication11.dll
+c:\users\pavel\source\repos\WebApplication11\WebApplication11\bin\Debug\netcoreapp2.0\WebApplication11.pdb
+c:\users\pavel\source\repos\WebApplication11\WebApplication11\obj\Debug\netcoreapp2.0\WebApplication11.csproj.CoreCompileInputs.cache
+c:\users\pavel\source\repos\WebApplication11\WebApplication11\obj\Debug\netcoreapp2.0\WebApplication11.AssemblyInfoInputs.cache
+c:\users\pavel\source\repos\WebApplication11\WebApplication11\obj\Debug\netcoreapp2.0\WebApplication11.AssemblyInfo.cs
+c:\users\pavel\source\repos\WebApplication11\WebApplication11\obj\Debug\netcoreapp2.0\WebApplication11.dll
+c:\users\pavel\source\repos\WebApplication11\WebApplication11\obj\Debug\netcoreapp2.0\WebApplication11.pdb
+C:\Users\pavel\source\repos\WebApplication11\WebApplication11\obj\Debug\netcoreapp2.0\WebApplication11.csprojResolveAssemblyReference.cache

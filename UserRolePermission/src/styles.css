@@ -1,0 +1,11 @@
+body {
+    color: #0C2E2B;
+  }
+  a {
+    cursor: pointer;
+  }
+  .page {
+    margin: 0 auto;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+  }

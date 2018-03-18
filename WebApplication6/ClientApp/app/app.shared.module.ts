@@ -14,6 +14,7 @@ import { CounterComponent } from './components/counter/counter.component';
 import { AddUserComponent } from './components/adduser/adduser.component';
 import { ViewUserComponent } from './components/viewuser/viewuser.component';
 import { EditUserComponent } from './components/edituser/edituser.component';
+import { PaginationModule, ModalModule, DatepickerModule } from 'ngx-bootstrap';
 
 import { USERS_ROUTES } from './userroutes/userRoutes';
 import { UsersTypeDataService } from './services/userstype.dataservice';
@@ -44,6 +45,7 @@ import { UsersTypeDataService } from './services/userstype.dataservice';
         CommonModule,
         HttpModule,
 		FormsModule,
+		ModalModule.forRoot(), 
 		ReactiveFormsModule,
 		RouterModule.forRoot(USERS_ROUTES)
     ]

@@ -1,0 +1,52 @@
+<button class="btn btn-default" (click)="createUserModal.openModal()">
+        <i class="fa fa-plus" aria-hidden="true"></i> Add User
+</button>
+<br /><br />
+
+<div @flyInOut>
+   <table class="table table-hover">
+       <thead>
+           <tr>
+               <th>Last Name</th>
+               <th>First Name</th>
+               <th>Hire Date</th>
+               <th>Roles</th>
+               <th></th>
+               <th></th>
+               <th></th>
+           </tr>
+       </thead>
+       <tbody>
+           <tr *ngFor="let user of users">
+               <td>{{user.lastName}}</td>
+               <td>{{user.firstMidName}}</td>
+               <td>{{user.hireDate | dateFormat | date:'medium'}}</td>
+               <td>
+                   <span *ngFor="let role of user.roles">
+                        {{role.roleID}}: {{role.title}} <br />
+                    </span>
+               </td>
+               <td>
+                   <button class="btn btn-primary" (click)="detailUserModal.openModal(user.id)"> 
+                   <i class="fa fa-info-circle" aria-hidden="true"></i> Details</button>
+               </td> 
+               <td>
+                   <a class="btn btn-info" (click)="editUserModal.openModal(user.id)">
+                   <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a>
+               </td>
+               <td>
+                   <button class="btn btn-danger" (click)="removeUser(user)">
+                       <i class="fa fa-trash" aria-hidden="true"></i> Delete
+                   </button>
+               </td> 
+           </tr>
+       </tbody>
+   </table>
+
+   <pagination [boundaryLinks]="true" [totalItems]="totalItems" [itemsPerPage]="itemsPerPage" [(ngModel)]="currentPage" class="pagination-sm"
+       previousText="&lsaquo;" nextText="&rsaquo;" firstText="&laquo;" lastText="&raquo;" (pageChanged)="pageChanged($event)"></pagination>
+</div>
+
+<createUser-modal [user]="user" (userCreated)="loadUsers();" #createUserModal></createUser-modal> 
+<detailUser-modal #detailUserModal></detailUser-modal>
+<editUser-modal (userUpdated)="loadUsers();" #editUserModal></editUser-modal>

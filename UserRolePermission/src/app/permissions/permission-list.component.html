@@ -1,0 +1,46 @@
+<button class="btn btn-default" (click)="createPermissionModal.openModal()">
+        <i class="fa fa-plus" aria-hidden="true"></i> Add Permission
+</button>
+<br /><br />
+
+<div @flyInOut>
+   <table class="table table-hover">
+       <thead>
+           <tr>
+               <th>ID</th>
+               <th>Permission Name</th>
+
+               <th></th>
+               <th></th>
+               <th></th>
+           </tr>
+       </thead>
+       <tbody>
+           <tr *ngFor="let permission of permissions">
+               <td>{{permission.id}}</td>
+               <td>{{permission.permissionName}}</td>
+              
+               <td>
+                   <button class="btn btn-primary" (click)="detailPermissionModal.openModal(permission.id)"> 
+                   <i class="fa fa-info-circle" aria-hidden="true"></i> Details</button>
+               </td> 
+               <td>
+                   <a class="btn btn-info" (click)="editPermissionModal.openModal(permission.id)">
+                   <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a>
+               </td>
+               <td>
+                   <button class="btn btn-danger" (click)="removePermission(permission)">
+                       <i class="fa fa-trash" aria-hidden="true"></i> Delete
+                   </button>
+               </td> 
+           </tr>
+       </tbody>
+   </table>
+
+   <pagination [boundaryLinks]="true" [totalItems]="totalItems" [itemsPerPage]="itemsPerPage" [(ngModel)]="currentPage" class="pagination-sm"
+       previousText="&lsaquo;" nextText="&rsaquo;" firstText="&laquo;" lastText="&raquo;" (pageChanged)="pageChanged($event)"></pagination>
+</div>
+
+<createPermission-modal [permission]="permission" (permissionCreated)="loadPermissions();" #createPermissionModal></createPermission-modal> 
+<detailPermission-modal #detailPermissionModal></detailPermission-modal>
+<editPermission-modal (permissionUpdated)="loadPermissions();" #editPermissionModal></editPermission-modal>
